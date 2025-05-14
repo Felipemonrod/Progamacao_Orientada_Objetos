@@ -1,4 +1,4 @@
-public abstract class Conta {
+abstract public class Conta {
     private String numero;
     private String agencia;
     private String banco;
@@ -13,7 +13,7 @@ public abstract class Conta {
         this.saldo   = 0.0;
     }
 
-    public abstract boolean sacar(double valor);
+    abstract public boolean sacar(double valor);
 
     public boolean depositar(double valor) {
         if (valor > 0) {
