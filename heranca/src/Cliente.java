@@ -1,4 +1,4 @@
-public abstract class Cliente {
+abstract public class Cliente {
     private String nome;
     private String telefone;
 
