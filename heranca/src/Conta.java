@@ -1,4 +1,4 @@
-abstract public class Conta {
+public abstract class Conta {
     private String numero;
     private String agencia;
     private String banco;
@@ -23,7 +23,30 @@ abstract public class Conta {
         return false;
     }
 
-    public boolean transferir(double valor, Conta destino) {
+    public boolean transferir(double valor, ContaCorrente destino) {
+        if (sacar(valor)) {
+            destino.depositar(valor);
+            return true;
+        }
+        return false;
+    }
+    public boolean transferir(double valor, ContaEmpresarial destino) {
+        if (sacar(valor)) {
+            destino.depositar(valor);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean transferir(double valor, ContaEspecial destino) {
+        if (sacar(valor)) {
+            destino.depositar(valor);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean transferir(double valor, ContaPoupanca destino) {
         if (sacar(valor)) {
             destino.depositar(valor);
             return true;
